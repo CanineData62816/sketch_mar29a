@@ -6,21 +6,16 @@ Servo servo2;
 
 void setup()
 {
+  int pos = 0;
   servo1.attach(9);
   servo2.attach(10);
 }
 
 void loop()
 {
-  for(;;){
-    servo1.attach();
-    servo2.attach();
-    servo1.write(360);
-    servo2.write(360);
-    delay(60000);
-    servo1.detach();
-    servo2.detach();
+  for (int i = 0; i < 360; i++) {
+    servo1.write(i);
+    servo2.write(i);
+    delay(37);
   }
-  
-
 }
